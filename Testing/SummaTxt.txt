@@ -1,0 +1,6 @@
+http://localhost:3000/api/v1/shorten
+
+{
+    "url": "https://www.google.com",
+    "custom_alias": "google-test"
+}
