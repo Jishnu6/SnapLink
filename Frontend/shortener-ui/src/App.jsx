@@ -3,6 +3,7 @@ import { Link2, BarChart3, Copy, Check, ArrowRight, Sparkles, Clock, LogOut } fr
 import AnalyticsDashboard from './components/AnalyticsDashboard';
 import AuthPage from './components/AuthPage';
 
+
 export default function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [activeTab, setActiveTab] = useState('generate'); // 'generate' | 'analytics'
@@ -15,7 +16,7 @@ export default function App() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
 
-  const BACKEND_URL = 'http://localhost:3000'; // Adjust to your Fiber port
+  const BACKEND_URL = import.meta.env.VITE_BACKEND_URL || 'http://localhost:8000';
 
   // Check storage on boot up lifecycle
   useEffect(() => {

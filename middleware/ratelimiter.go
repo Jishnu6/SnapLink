@@ -21,8 +21,10 @@ func NewRateLimiter() (fiber.Handler, fiber.Handler) {
 
 	// Initialize shared Redis storage configuration using the Cloud URL
 	store := redis.New(redis.Config{
-		URL:   redisURL,
-		Reset: false,
+		Host:     "redis-11277.c44.us-east-1-2.ec2.cloud.redislabs.com",
+		Port:     11277,
+		Username: "default",
+		Password: "8<V:O0%es_U.b52^wS?%n",
 	})
 
 	// Tier 1: Loose Limiter for Redirect Endpoint (e.g., /:shortCode)
