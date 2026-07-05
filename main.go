@@ -41,7 +41,7 @@ func main() {
 
 	app.Use(cors.New(cors.Config{
 		// Allow the origin of your Vite development server
-		AllowOrigins: "http://localhost:5173",
+		AllowOrigins: "https://snap-link-tau.vercel.app/",
 		// Explicitly allow headers your React application sends
 		AllowHeaders: "Origin, Content-Type, Accept, Authorization",
 		// Allow the HTTP verbs your API uses, plus OPTIONS for preflight checking
