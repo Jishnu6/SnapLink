@@ -137,7 +137,7 @@ export default function App() {
                 Shorten Links. Track Telemetry.
               </h1>
               <p className="text-slate-400 text-lg">
-                Backed by atomic Redis real-time sync states and high-performance MongoDB analytical pipelines.
+              SnapLink delivers lightning-fast URL redirection powered by a high-performance hybrid architecture. Gain actionable insights into your audience with real-time analytics and enterprise-grade UTM tracking, all built for scale and security.
               </p>
             </div>
 
