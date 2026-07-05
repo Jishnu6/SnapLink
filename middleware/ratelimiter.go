@@ -3,6 +3,7 @@ package middleware
 import (
 	"os"
 	"time"
+	"strconv"
 
 	"github.com/gofiber/fiber/v2"
 	"github.com/gofiber/fiber/v2/middleware/limiter"
@@ -13,18 +14,24 @@ import (
 func NewRateLimiter() (fiber.Handler, fiber.Handler) {
 	// Pull your Redis Cloud URL from your environment variables
 	// It should look like: redis://default:your_password@redis-13540.ec2.cloud.redislabs.com:13540
-	redisURL := os.Getenv("REDIS_URL")
-	if redisURL == "" {
-		// Fallback to localhost for local testing safety
-		redisURL = "redis://127.0.0.1:6379"
-	}
+	// redisURL := os.Getenv("REDIS_URL")
+	// if redisURL == "" {
+	// 	// Fallback to localhost for local testing safety
+	// 	redisURL = "redis://127.0.0.1:6379"
+	// }
 
 	// Initialize shared Redis storage configuration using the Cloud URL
 	store := redis.New(redis.Config{
-		Host:     "redis-11277.c44.us-east-1-2.ec2.cloud.redislabs.com",
-		Port:     11277,
-		Username: "default",
-		Password: "8<V:O0%es_U.b52^wS?%n",
+		Host:     os.Getenv("REDIS_HOST"),
+		Port: func() int {
+			port, err := strconv.Atoi(os.Getenv("REDIS_PORT"))
+			if err != nil {
+				panic("Invalid REDIS_PORT value")
+			}
+			return port
+		}(),
+		Username: os.Getenv("REDIS_USER"),
+		Password: os.Getenv("REDIS_PASS"),
 	})
 
 	// Tier 1: Loose Limiter for Redirect Endpoint (e.g., /:shortCode)
