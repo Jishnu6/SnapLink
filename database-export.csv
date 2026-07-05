@@ -1,2 +1,0 @@
-﻿"Status","Database ID","Database name","Subscription ID","Subscription name","Plan","Region","Public endpoint","Private endpoint","Memory limit (MB)","Memory used (MB)","Throughput (Ops/sec)","Capabilities","Options","Shard type","Shard count","Shard price ($/hr)","Database price ($/hr)"
-"Active","14292046","database-MP1EYL71","3259893","database-MP1EYL71","Essentials","ap-south-1","redis-13540.crce300.ap-south-1-2.ec2.cloud.redislabs.com:13540","N/A","30","2.1","N/A","Probabilistic; JSON; Time series; Search and query","N/A","N/A","N/A","N/A","Fixed price"
