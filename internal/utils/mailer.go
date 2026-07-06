@@ -9,7 +9,7 @@ import (
 func SendOTPEmail(toEmail, otp string) error {
 	from := os.Getenv("SMTP_EMAIL")
 	password := os.Getenv("SMTP_APP_PASSWORD") // Use a Google App Password
-	smtpHost := "smtp.gmail.com"
+	smtpHost := "smtp-relay.brevo.com"
 	smtpPort := "587"
 
 	// Format the email message
