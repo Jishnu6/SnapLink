@@ -50,9 +50,7 @@ func RequestOTP(c *fiber.Ctx) error {
 	// Execute the SMTP network call in a background goroutine!
 	// This ensures your React UI gets an instant response while the email sends.
 	go func(email, code string) {
-		if err := utils.SendOTPEmail(email, code); err != nil {
-			fmt.Println("Failed to send OTP Email:", err)
-		}
+		utils.SendOTPEmail(email, code)
 	}(req.Email, otp)
 
 	return c.Status(fiber.StatusOK).JSON(fiber.Map{

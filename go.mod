@@ -26,7 +26,9 @@ require (
 	github.com/montanaflynn/stats v0.7.1 // indirect
 	github.com/oschwald/maxminddb-golang v1.13.0 // indirect
 	github.com/philhofer/fwd v1.1.3-0.20240916144458-20a13a1f6b7c // indirect
+	github.com/resend/resend-go/v2 v2.28.0 // indirect
 	github.com/rivo/uniseg v0.2.0 // indirect
+	github.com/smtp2go-oss/smtp2go-go v1.0.4 // indirect
 	github.com/stretchr/testify v1.11.1 // indirect
 	github.com/tinylib/msgp v1.2.5 // indirect
 	github.com/valyala/bytebufferpool v1.0.0 // indirect
